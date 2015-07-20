@@ -1,0 +1,9 @@
+{% block content %}
+    <h1>GGlazes</h1>
+        <h2>Glazes</h2>
+        <ul>
+            {% for glazeLookup in object_list %}
+                <li>{{glazeLookup.glaze_name }}</li>
+            {% endfor %}
+        </ul>
+{% endblock %}
