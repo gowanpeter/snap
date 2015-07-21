@@ -1,6 +1,6 @@
-#from plain.models import Piece, Condition, PublicationLookup, publication_link_piece, ExhibitionLookup, exhibition_link_piece, Documentation, documentation_link_piece, GlazeLookup, glaze_link_piece, HeathLineLookup, heath_line_link_piece, Logo,logo_link_piece, MakerLookup, maker_link_piece, MaterialLookup, material_link_piece, MethodLookup, method_link_piece, SetCollection, setCollection_link_piece
+from snip.models import Piece, Condition, PublicationLookup, publication_link_piece, ExhibitionLookup, exhibition_link_piece, Documentation, documentation_link_piece, GlazeLookup, glaze_link_piece, HeathLineLookup, heath_line_link_piece, Logo,logo_link_piece, MakerLookup, maker_link_piece, MaterialLookup, material_link_piece, MethodLookup, method_link_piece, SetCollection, setCollection_link_piece
 
-from plain.models import Piece, GlazeLookup, glaze_link_piece, HeathLineLookup, heath_line_link_piece, MakerLookup, maker_link_piece, MaterialLookup, material_link_piece, MethodLookup, method_link_piece
+#from snip.models import Piece, ExhibitionLookup, GlazeLookup, glaze_link_piece, HeathLineLookup, heath_line_link_piece, MakerLookup, maker_link_piece, MaterialLookup, material_link_piece, MethodLookup, method_link_piece
 
 from autofixture import generators, register, AutoFixture
 
@@ -73,7 +73,7 @@ register(ExhibitionLookup, ExhibitionLookupAutoFixture)
 class DocumentationAutoFixture(AutoFixture):
     field_values = {
         'documentation_name': generators.ChoicesGenerator(
-            values=annual report, charter, concept statement , dossier, Green Paper, invitation to tender, palimpsest, screed, wordle, vignette'.split(',')
+            values="annual report, charter, concept statement , dossier, Green Paper, invitation to tender, palimpsest, screed, wordle, vignette".split(',')
         )
     }
 

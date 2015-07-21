@@ -4,11 +4,11 @@ log = logging.getLogger(__name__)
 #app specific urls
 from django.conf.urls import include, url
 from django.contrib import admin
-from plain.models import Piece, GlazeLookup, Documentation, Condition, ExhibitionLookup, HeathLineLookup, Logo, MakerLookup, MaterialLookup, MethodLookup, PublicationLookup, SetCollection
-from plain.views import MyView
-from plain.views import GlazeLookupList
-from plain.views import MakerLookupList
-from plain.views import PieceDetailView
+from snip.models import Piece, GlazeLookup, Documentation, Condition, ExhibitionLookup, HeathLineLookup, Logo, MakerLookup, MaterialLookup, MethodLookup, PublicationLookup, SetCollection
+from snip.views import MyView
+from snip.views import GlazeLookupList
+from snip.views import MakerLookupList
+from snip.views import PieceDetailView
 log.debug('In urls the second')
 urlpatterns = [
     url(r'^glaze/$' , GlazeLookupList.as_view(), name = 'glaze-list'),

@@ -22,11 +22,21 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=0
-FILE_NAME_0=958;Python;0;EUTF-8;0;1;1;%2Fhome%2Fpeter%2Fproject_home%2Fubersnap%2Fsnap%2Fsnip%2Fviews.py;0;4
+current_page=3
+FILE_NAME_0=48;Python;0;EUTF-8;0;1;1;%2Fhome%2Fpeter%2Fproject_home%2Fubersnap%2Fsnap%2Fsnip%2Fviews.py;0;4
+FILE_NAME_1=255;HTML;0;EUTF-8;0;1;1;%2Fhome%2Fpeter%2Fproject_home%2Fubersnap%2Fsnap%2Fsnip%2Ftemplates%2Fsnip%2Fglazelookup_list.html;0;4
+FILE_NAME_2=574;None;0;EUTF-8;0;1;1;%2Fhome%2Fpeter%2Fproject_home%2Fubersnap%2Fsnap%2Floadtestdata_script;0;4
+FILE_NAME_3=48;Python;0;EUTF-8;0;1;1;%2Fhome%2Fpeter%2Fproject_home%2Fubersnap%2Fsnap%2Fsnip%2Fautofixtures.py;0;4
+FILE_NAME_4=2253;None;0;EUTF-8;0;1;1;%2Fhome%2Fpeter%2Fproject_home%2Fubersnap%2Fsnap%2Fmain_logger;0;4
+FILE_NAME_5=0;Python;0;EUTF-8;0;1;1;%2Fhome%2Fpeter%2Fproject_home%2Fubersnap%2Fsnap%2Fsnap%2Fsettings.py;0;4
+FILE_NAME_6=0;Python;0;EUTF-8;0;1;1;%2Fhome%2Fpeter%2Fproject_home%2Fubersnap%2Fsnap%2Fsnip%2Fmodels.py;0;4
+FILE_NAME_7=0;Python;0;EUTF-8;0;1;1;%2Fhome%2Fpeter%2F.virtualenvs%2Fenvsnap%2Flib%2Fpython3.4%2Fsite-packages%2Fautofixture%2Fautofixtures.py;0;4
+FILE_NAME_8=0;Python;0;EUTF-8;0;1;1;%2Fhome%2Fpeter%2F.virtualenvs%2Fenvsnap%2Flib%2Fpython3.4%2Fsite-packages%2Fautofixture%2Fbase.py;0;4
+FILE_NAME_9=0;Python;0;EUTF-8;0;1;1;%2Fhome%2Fpeter%2F.virtualenvs%2Fenvsnap%2Flib%2Fpython3.4%2Fsite-packages%2Fdjango%2Fdb%2Fbackends%2Fpostgresql_psycopg2%2Futils.py;0;4
+FILE_NAME_10=8385;Python;0;EUTF-8;0;1;1;%2Fhome%2Fpeter%2F.virtualenvs%2Fenvsnap%2Flib%2Fpython3.4%2Fsite-packages%2Fdjango%2Fdb%2Fbackends%2Fpostgresql_psycopg2%2Fbase.py;0;4
 
 [VTE]
-last_dir=/home/peter/project_home/simple/simple
+last_dir=/home/peter/project_home/ubersnap/snap
 
 [debugger]
 target=

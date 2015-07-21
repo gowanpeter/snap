@@ -23,7 +23,7 @@ class Piece(models.Model):
     width_mm = models.IntegerField(blank=True, null=True)
     height_mm = models.IntegerField(blank=True, null=True)
     weight_grams = models.IntegerField(blank=True, null=True)
-    cataloguer = models.CharField(max_length=8, blank=True)
+    cataloguer = models.CharField(max_length=22, blank=True)
     catalogue_date = models.DateField(blank=True, null=True)
 
 
@@ -69,7 +69,7 @@ class Condition(models.Model):
 
 #many to many
 class Documentation(models.Model):
-    documentation_name = models.CharField(max_length= 20, blank=True)
+    documentation_name = models.CharField(max_length= 25, blank=True)
     documentation_pieces = models.ManyToManyField(Piece, through="documentation_link_piece")
     slug = AutoSlugField(unique=True, blank=False)
     
@@ -99,7 +99,7 @@ class documentation_link_piece(models.Model):
 #one exhibition has many pieces, foreign key is exibition_id and is in pieces
 #exhibition = models.ForeignKey('exhibition')
 class ExhibitionLookup(models.Model):
-    exhibition_name = models.CharField(max_length= 20, blank=True)
+    exhibition_name = models.CharField(max_length= 75, blank=True)
     exhibition_date = models.DateField(blank=True, null=True)
     exhibition_description = models.CharField(max_length=12, blank=True)
     slug = AutoSlugField(unique=True, blank=False)
@@ -304,7 +304,7 @@ class method_link_piece(models.Model):
 #publication = models.ForeignKey('publication')
 
 class PublicationLookup(models.Model):
-    publication_name = models.CharField(max_length=8, blank=True)
+    publication_name = models.CharField(max_length=40, blank=True)
     publication_date = models.DateField(blank=True, null=True)
     publication_author = models.CharField(max_length=8, blank=True)
     publication_media = models.CharField(max_length=8, blank=True)

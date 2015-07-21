@@ -8,7 +8,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.utils import timezone
 
-from plain.models import Piece, GlazeLookup, Documentation, Condition, ExhibitionLookup, HeathLineLookup, Logo, MakerLookup, MaterialLookup, MethodLookup, PublicationLookup, SetCollection
+from snip.models import Piece, GlazeLookup, Documentation, Condition, ExhibitionLookup, HeathLineLookup, Logo, MakerLookup, MaterialLookup, MethodLookup, PublicationLookup, SetCollection
 
 class MyView(View):
 
@@ -20,22 +20,23 @@ class MyView(View):
 
 class GlazeLookupList(ListView):
     print("missa luba")
-    log.debug('in GlazeLookupList')
-
     model = GlazeLookup
+   # context_object_name = 'glazes'
+    log.debug('in GlazeLookupList')
 
 
 class MakerLookupList(ListView):
+    print("maker luba")
     log.debug('in MakerLookupList')
     model = MakerLookup
 
 
 class PieceDetailView(DetailView):
     log.debug('in PieceDetailView')
-    context_object_name = 'publisher'
-    queryset = Publisher.objects.all()
-    
-    
+    context_object_name = 'piece'
+    queryset = Piece.objects.all()
+
+
     #def get_context_data(self, **kwargs):
         #context = super(ArticleDetailView, self).get_context_data(**kwargs)
         #context['now'] = timezone.now()

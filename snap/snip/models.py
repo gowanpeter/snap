@@ -9,9 +9,9 @@ from autoslug import AutoSlugField
 
 class Piece(models.Model):
     post_edith = models.NullBooleanField()
-    catalogue_id = models.CharField(max_length= 8)
-    heath_id = models.CharField(max_length= 8, blank=True)
-    piece_name = models.CharField(max_length=6, blank=True)
+    catalogue_id = models.CharField(max_length= 20)
+    heath_id = models.CharField(max_length= 20, blank=True)
+    piece_name = models.CharField(max_length= 8, blank=True)
     slug = AutoSlugField(unique=True, blank=False)
     piece_description = models.CharField(max_length= 12, blank=True)
     manufactured_date = models.DateField(blank=True, null=True)
@@ -23,7 +23,7 @@ class Piece(models.Model):
     width_mm = models.IntegerField(blank=True, null=True)
     height_mm = models.IntegerField(blank=True, null=True)
     weight_grams = models.IntegerField(blank=True, null=True)
-    cataloguer = models.CharField(max_length=22, blank=True)
+    cataloguer = models.CharField(max_length=30, blank=True)
     catalogue_date = models.DateField(blank=True, null=True)
 
 
@@ -59,7 +59,7 @@ class Condition(models.Model):
     name = models.CharField(max_length=8, blank=True)
     condition = models.CharField(max_length=1, choices=conditions, default = 'b')
     slug = AutoSlugField(unique=True, blank=False)
-    
+
     class Meta:
         verbose_name = "condition"
         verbose_name_plural = "conditions"
@@ -69,10 +69,10 @@ class Condition(models.Model):
 
 #many to many
 class Documentation(models.Model):
-    documentation_name = models.CharField(max_length= 20, blank=True)
+    documentation_name = models.CharField(max_length= 25, blank=True)
     documentation_pieces = models.ManyToManyField(Piece, through="documentation_link_piece")
     slug = AutoSlugField(unique=True, blank=False)
-    
+
     class Meta:
         verbose_name = "documentation"
         verbose_name_plural = "documentation"
@@ -99,11 +99,11 @@ class documentation_link_piece(models.Model):
 #one exhibition has many pieces, foreign key is exibition_id and is in pieces
 #exhibition = models.ForeignKey('exhibition')
 class ExhibitionLookup(models.Model):
-    exhibition_name = models.CharField(max_length= 20, blank=True)
+    exhibition_name = models.CharField(max_length= 75, blank=True)
     exhibition_date = models.DateField(blank=True, null=True)
     exhibition_description = models.CharField(max_length=12, blank=True)
     slug = AutoSlugField(unique=True, blank=False)
-    
+
     class Meta:
         verbose_name = "exhibition"
         verbose_name_plural = "exhibitions"
@@ -129,7 +129,7 @@ class GlazeLookup(models.Model):
     glaze_end_date = models.DateField(blank=True, null=True)
     slug = AutoSlugField(unique=True, blank=False)
     log.info('in GlazeLookup')
-    
+
     def get_absolute_url(self):
         return reverse("GlazeLookup:detail", kwargs={"slug": self.slug})
 
@@ -147,7 +147,7 @@ class glaze_link_piece(models.Model):
     glazeLookup = models.ForeignKey(GlazeLookup)
     batch =  models.CharField(max_length=12, blank= False, default = '200')
     log.info('in glaze_link_piece')
-       
+
     class Meta:
         verbose_name = "glaze link"
         verbose_name_plural = "glaze pieces"
@@ -162,7 +162,7 @@ class HeathLineLookup(models.Model):
     heath_line_begin_date = models.DateField(blank=True, null=True)
     heath_line_end_date = models.DateField(blank=True, null=True)
     slug = AutoSlugField(unique=True, blank=False)
-    
+
     class Meta:
         verbose_name = "heath line "
         verbose_name_plural = "heath lines"
@@ -190,7 +190,7 @@ class Logo(models.Model):
     stamp_name = models.CharField(max_length=8, blank=True)
     picture = models.TextField(blank=True)
     slug = AutoSlugField(unique=True, blank=False)
-    
+
     class Meta:
         verbose_name = "logo"
         verbose_name_plural = "logos"
@@ -218,7 +218,7 @@ class MakerLookup(models.Model):
     maker_description = models.CharField(max_length=12, blank=True)
     slug = AutoSlugField(unique=True, blank=False)
     log.info('in MakerLookup')
-       
+
     class Meta:
         verbose_name = "maker"
         verbose_name_plural = "makers"
@@ -250,7 +250,7 @@ class MaterialLookup(models.Model):
     material_pieces = models.ManyToManyField(Piece, through="material_link_piece")
     material_description = models.CharField(max_length=12, blank=True)
     slug = AutoSlugField(unique=True, blank=False)
-    
+
     class Meta:
         verbose_name = "material"
         verbose_name_plural = "materials"
@@ -277,7 +277,7 @@ class MethodLookup(models.Model):
     method_pieces = models.ManyToManyField(Piece, through="method_link_piece")
     method_description = models.CharField(max_length=12, blank=True)
     slug = AutoSlugField(unique=True, blank=False)
-    
+
     class Meta:
         verbose_name = "method"
         verbose_name_plural = "methods"
@@ -304,12 +304,12 @@ class method_link_piece(models.Model):
 #publication = models.ForeignKey('publication')
 
 class PublicationLookup(models.Model):
-    publication_name = models.CharField(max_length=8, blank=True)
+    publication_name = models.CharField(max_length=40, blank=True)
     publication_date = models.DateField(blank=True, null=True)
     publication_author = models.CharField(max_length=8, blank=True)
     publication_media = models.CharField(max_length=8, blank=True)
     slug = AutoSlugField(unique=True, blank=False)
-    
+
     class Meta:
         verbose_name = "publication"
         verbose_name_plural = "publications"
@@ -331,11 +331,11 @@ class publication_link_piece(models.Model):
 
 #many to many
 class SetCollection(models.Model):
-    set_collection_name = models.CharField(max_length=8, blank=True)
+    set_collection_name = models.CharField(max_length=30, blank=True)
     set_collection_piece = models.ManyToManyField(Piece, through="setCollection_link_piece")
     setcollection_location = models.CharField(max_length=8, blank=True)
     slug = AutoSlugField(unique=True, blank=False)
-    
+
     class Meta:
         verbose_name = "collection"
         verbose_name_plural = "collections"
